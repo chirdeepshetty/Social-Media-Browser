@@ -1,0 +1,9 @@
+<div id="search_bar">
+    <% form_tag search_url, :id => "search_form" do %>
+        <div><h2>Social Media Browser</h2></div>
+        <div><%= text_field_tag "keyword", '',  :size => 50 %></div>
+        <div><%= submit_tag "Search" %></div>
+    <% end %>
+</div>
+
+<%= render :partial => "tweets" unless @keyword.blank? %>

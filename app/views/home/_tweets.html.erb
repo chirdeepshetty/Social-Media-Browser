@@ -1,0 +1,14 @@
+<div class = "tweets">
+    <% if @tweets.empty? %>
+        <div>There are no tweets with video links for "<%= @keyword %>"</div>
+    <% end %>
+    
+    
+    <% @tweets.each do |tweet| %>
+        <div class = "tweet">
+            <div><span><strong><%= tweet.user %></strong></span> | <span><%= tweet.text %></span></div>
+            <div><%= tweet.video %>
+        </div>
+        <br/>
+    <% end %>
+</div>
