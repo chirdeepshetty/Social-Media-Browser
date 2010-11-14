@@ -1,9 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+      <%= javascript_include_tag "jquery-1.4.4.js" %>
       <%= stylesheet_link_tag "main" %>
       <title>Social Media</title>
+      
+      <script type="text/javascript">
+        $(document).ready(function() {
+        	$$('.thumbnail').each(function(element){
+        		element.observe('click', function(event){ alert("hello"); });
+        	});
+        });
+      </script>
   </head>
+  
   <body>
       <%= yield %>
   </body>

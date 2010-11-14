@@ -1,14 +1,29 @@
 <div class = "tweets">
-    <% if @tweets.empty? %>
+    <% if @tweets_with_videos.empty? %>
         <div>There are no tweets with video links for "<%= @keyword %>"</div>
     <% end %>
     
+    <div class="content">
+        <% @tweets_with_videos.each do |tweet, video| %>
+            <div class = "video_tweets">
+                <div class = "video">
+                    <%= image_tag video.thumbnail, :class => "thumbnail" %>
+                </div>
+                <div>
+                    <span><strong>Twitter User : </strong><%= tweet.user %></span> | 
+                    <span><strong>Tweet : </strong><%= tweet.text %></span>
+                </div>
+                <div>
+                    <span><strong>Youtube title : </strong><%= video.title %></span> | 
+                    <span><strong>Youtube description : </strong><%= video.description %></span>
+                </div>
+            </div>
+
+            <br/>
+        <% end %>
     
-    <% @tweets.each do |tweet| %>
-        <div class = "tweet">
-            <div><span><strong><%= tweet.user %></strong></span> | <span><%= tweet.text %></span></div>
-            <div><%= tweet.video %>
-        </div>
-        <br/>
-    <% end %>
+        <div id="video_player">
+            
+        </div>    
+    </div>
 </div>
