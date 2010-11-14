@@ -4,10 +4,10 @@
     <% end %>
     
     <div class="content">
-        <% @tweets_with_videos.each do |tweet, video| %>
-            <div class = "video_tweets">
+        <div class = "video_tweets">
+            <% @tweets_with_videos.each do |tweet, video| %>
                 <div class = "video">
-                    <%= image_tag video.thumbnail, :class => "thumbnail" %>
+                    <%= image_tag video.thumbnail, :class => "thumbnail", :id => video.video_id %>
                 </div>
                 <div>
                     <span><strong>Twitter User : </strong><%= tweet.user %></span> | 
@@ -17,13 +17,9 @@
                     <span><strong>Youtube title : </strong><%= video.title %></span> | 
                     <span><strong>Youtube description : </strong><%= video.description %></span>
                 </div>
-            </div>
+             <% end %>
+        </div>
 
-            <br/>
-        <% end %>
-    
-        <div id="video_player">
-            
-        </div>    
+        <div id="video_player"></div>    
     </div>
 </div>

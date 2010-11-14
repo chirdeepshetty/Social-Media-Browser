@@ -7,8 +7,15 @@
       
       <script type="text/javascript">
         $(document).ready(function() {
-        	$$('.thumbnail').each(function(element){
-        		element.observe('click', function(event){ alert("hello"); });
+        	$('.thumbnail').bind('click', function(){ 
+        	    var video_id = $(this).attr("id");
+        	    var player = '<object width="480" height="320">' + 
+        	        '<param name="movie" value="http://www.youtube.com/v/' + video_id + '"></param>' +
+        	        '<param name="allowFullScreen" value="false"></param>' + 
+        	        '<param name="allowscriptaccess" value="always"></param>' + 
+        	        '<embed src="http://www.youtube.com/v/' + video_id + '" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="false" width="480" height="320"></embed>' + 
+        	    '</object>"';
+                $("#video_player").html(player);
         	});
         });
       </script>

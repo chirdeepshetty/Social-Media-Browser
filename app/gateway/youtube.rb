@@ -16,7 +16,7 @@ module Gateway
             title = feed.elements["title"].text
             description = feed.elements["media:group/media:description"].text
             thumbnail = feed.elements["media:group/media:thumbnail"].attributes["url"]
-            YoutubeVideo.new(title, thumbnail, description)
+            YoutubeVideo.new(title, thumbnail, description, video_id)
         end
         
         def id_from_url(video_url)

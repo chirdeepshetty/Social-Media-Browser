@@ -4,6 +4,12 @@
 }
 
 .video_tweets{
+    float:left;
     background-color: #DCDCDC;
-    width: 60%;
+    width: 50%;
+}
+
+#video_player{
+    float:right;
+    width:50%;
 }
